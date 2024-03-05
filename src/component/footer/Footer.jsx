@@ -2,7 +2,7 @@
 import { useState } from "react";
 import style from "./Footer.module.scss"
 
-const { layout, container, upper, title, lower, block, column, row, subtitle } = style
+const { layout, container, upper, title, lower, grid, block, column, row, subtitle } = style
 
 const Footer = () => {
 	const [selectedOption, setSelectedOption] = useState('default');
@@ -56,7 +56,7 @@ const Footer = () => {
 
 			<div className={lower}>
 				<div className={container}>
-					<div className={block}>
+					<div className={grid}>
 
 						<div className={column}>
 							<div className={row}>
@@ -67,73 +67,74 @@ const Footer = () => {
 							</div>
 							<div className={row}>
 
-								<p>Создание сайта  <span></span> </p>
+								<p>Создание сайта  <span> - </span> </p>
 								<img src="/picture/dev-logo.png" alt="" />
 
 							</div>
 						</div>
+						<div className={block}>
+							<div className={column}>
+								<h3 className={subtitle}>
+									Навигация
+								</h3>
+								<ul>
+									<li>
+										<a href="#">
+											О компании
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Тури
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Контакти
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Услуги
+										</a>
+									</li>
+								</ul>
 
-						<div className={column}>
-							<h3 className={subtitle}>
-								Навигация
-							</h3>
-							<ul>
-								<li>
-									<a href="#">
-										О компании
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Тури
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Контакти
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Услуги
-									</a>
-								</li>
-							</ul>
-
-						</div>
-
-						<div className={column}>
-							<h3 className={subtitle}>
-								Навигация
-							</h3>
-							<ul>
-								<li>
-									<a href="#">
-										FAQ
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Блог
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										Обратная связь
-									</a>
-								</li>
-							</ul>
-						</div>
-
-						<div className={column}>
-							<h3 className={subtitle}>
-								Контакти
-							</h3>
-							<div className={row}>
-								<p>г. Харьков, ул. Лермонтовская 10а</p>
 							</div>
-							<div className={row}>
-								<a href="tel:+380999908100">+38 (099) 990-81-00</a>
+
+							<div className={column}>
+								<h3 className={subtitle}>
+									Навигация
+								</h3>
+								<ul>
+									<li>
+										<a href="#">
+											FAQ
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Блог
+										</a>
+									</li>
+									<li>
+										<a href="#">
+											Обратная связь
+										</a>
+									</li>
+								</ul>
+							</div>
+
+							<div className={column}>
+								<h3 className={subtitle}>
+									Контакти
+								</h3>
+								<div className={row}>
+									<p>г. Харьков, ул. Лермонтовская 10а</p>
+								</div>
+								<div className={row}>
+									<a href="tel:+380999908100">+38 (099) 990-81-00</a>
+								</div>
 							</div>
 						</div>
 

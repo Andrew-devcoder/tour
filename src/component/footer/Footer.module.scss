@@ -5,7 +5,7 @@
 .container {
     margin: 0 auto;
     padding: 0 10px;
-    width: 90%;
+    width: 65%;
 }
 
 .upper {
@@ -30,11 +30,12 @@
             background-color: transparent;
             border-bottom: 1px solid #fff;
             color: #fff;
-            padding: 10px 20px;
+            padding: 5px 10px;
+            width: 120px;
 
             &::placeholder {
                 color: #fff;
-                font-size: 20px;
+                font-size: 16px;
             }
         }
 
@@ -47,7 +48,7 @@
 
             border-bottom-color: #fff;
             color: #fff;
-            padding: 10px 20px;
+            padding: 5px 10px;
 
             & option {
                 color: black;
@@ -77,9 +78,10 @@
     padding: 100px 0;
 }
 
-.block {
+.grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: 1fr 2fr;
 
     color: #fff;
 
@@ -92,8 +94,14 @@
     }
 
     & > div {
-        padding: 0 10px;
+        padding: 0 20px;
     }
+}
+
+.block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .column {
