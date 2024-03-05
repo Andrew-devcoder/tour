@@ -1,0 +1,16 @@
+.slick-dots {
+    bottom: 20px;
+    left: 20px;
+    display: flex !important;
+    justify-content: start;
+    z-index: 99;
+}
+
+.slick-dots li button:before {
+    color: #fff;
+    font-size: 15px;
+}
+
+.slick-dots li.slick-active button:before {
+    color: orange;
+}
