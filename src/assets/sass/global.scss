@@ -1,5 +1,16 @@
-#root {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+button {
+    background-color: #f2e205;
+    padding: 10px 15px;
+    border-radius: 8px;
+    border-color: transparent;
+
+    transition: all 0.4s ease;
+
+    &:hover {
+        border-color: #f2e205;
+        background-color: transparent;
+        color: #f2e205;
+
+        cursor: pointer;
+    }
 }

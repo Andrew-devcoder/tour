@@ -39,21 +39,28 @@
         }
 
         & select {
+            // appearance: none;
+
             background-color: transparent;
+            border-color: transparent;
+            outline: transparent;
+
+            border-bottom-color: #fff;
             color: #fff;
             padding: 10px 20px;
 
             & option {
                 color: black;
+
+                &:nth-child(2):hover {
+                    background-color: transparent;
+                    color: #f2e205;
+                }
+            }
+            & option:hover {
+                background-color: red;
             }
         }
-    }
-
-    & button {
-        background-color: rgb(204, 204, 0);
-        padding: 10px 15px;
-        border-radius: 8px;
-        border-color: transparent;
     }
 }
 
@@ -75,11 +82,54 @@
     grid-template-columns: repeat(4, 1fr);
 
     color: #fff;
+
+    & div:first-child {
+        padding-left: 0;
+    }
+
+    & div:last-child {
+        padding-right: 0;
+    }
+
+    & > div {
+        padding: 0 10px;
+    }
 }
 
 .column {
+    & ul li {
+        padding: 5px 0;
+    }
+    & a {
+        color: #fff;
+        text-decoration: none;
+    }
 }
 
 .row {
+    display: flex;
+    flex-direction: row;
     padding: 10px 0;
+
+    & a {
+        color: #fff;
+        text-decoration: none;
+    }
+
+    & span {
+        &:after {
+            content: "";
+        }
+    }
+}
+
+.subtitle {
+    padding: 10px 0;
+}
+
+option:hover {
+    background-color: red;
+    color: red;
+    background: red;
+    box-shadow: 0 0 10px 100px orange inset;
 }

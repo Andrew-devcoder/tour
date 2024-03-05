@@ -35,6 +35,7 @@ const Carrousel = () => {
 				</div>
 
 			</Slider>
+
 		</>
 	)
 };

@@ -1,0 +1,112 @@
+.menu {
+    padding: 15px 30px;
+    border-radius: 8px;
+
+    background-color: #f2e205;
+    filter: drop-shadow(2px 0 4px #00000090);
+    cursor: pointer;
+
+    position: relative;
+
+    & > ul {
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+
+        & > li {
+            font-weight: 800;
+            font-size: 18px;
+
+            & a {
+                text-decoration: none;
+                color: #00000097;
+                transition: all 0.4s ease;
+                position: relative;
+
+                &:after {
+                    content: "";
+                    width: 0%;
+                    height: 0;
+                    color: #000;
+
+                    transition: all 0.4s ease;
+
+                    position: absolute;
+                    bottom: -5px;
+                    left: 0;
+                }
+
+                &:hover {
+                    color: #000000;
+
+                    &:after {
+                        border: 1px solid #000;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.dropMenu {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 15px;
+
+    & li {
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+.dropListMenu {
+    position: absolute;
+    top: 35px;
+    left: -30px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 10px 30px;
+
+    background-color: #3299d990;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+
+    & > li {
+        padding: 10px 0;
+
+        font-weight: 300;
+        font-size: 16px;
+
+        cursor: pointer;
+    }
+
+    & a {
+        color: #ffffff90 !important;
+        transition: all 0.4s ease;
+
+        &:hover {
+            color: #ffffff !important;
+        }
+    }
+}
+
+.visible {
+    visibility: visible;
+    opacity: 1;
+}
+
+.arrow {
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+    transform: rotate(135deg) translateY(50%);
+}

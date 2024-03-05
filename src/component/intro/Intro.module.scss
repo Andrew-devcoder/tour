@@ -14,3 +14,27 @@
         width: auto;
     }
 }
+
+.wrapper {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+}
+
+.content {
+    width: max-content;
+    background-color: #03588c90;
+    padding: 50px 60px 60px 10%;
+
+    & button {
+        padding: 10px 15px;
+        border-radius: 8px;
+    }
+}
+
+.title {
+    color: #fff;
+    padding-bottom: 50px;
+}
