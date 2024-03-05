@@ -1,4 +1,4 @@
-.slick-dots {
+.intro-slick .slick-dots {
     bottom: 20px;
     left: 20px;
     display: flex !important;
@@ -6,16 +6,16 @@
     z-index: 99;
 }
 
-.slick-dots li button:before {
+.intro-slick .slick-dots li button:before {
     color: #fff;
     font-size: 15px;
 }
 
-.slick-dots li.slick-active button:before {
+.intro-slick .slick-dots li.slick-active button:before {
     color: orange;
 }
 
-.slick-slider {
+.intro-slick {
     max-height: 100vh;
     height: 100%;
 }

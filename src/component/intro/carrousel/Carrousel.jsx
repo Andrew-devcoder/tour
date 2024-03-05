@@ -17,7 +17,7 @@ const Carrousel = () => {
 	};
 	return (
 		<>
-			<Slider {...settings}>
+			<Slider {...settings} className="intro-slick">
 				<div>
 					<img src="/picture/banner1.png" alt="" />
 				</div>
