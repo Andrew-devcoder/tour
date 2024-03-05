@@ -19,19 +19,19 @@ const Carrousel = () => {
 		<>
 			<Slider {...settings}>
 				<div>
-					<img src="../../../src/assets/picture/banner1.png" alt="" />
+					<img src="/picture/banner1.png" alt="" />
 				</div>
 				<div>
-					<img src="../../../src/assets/picture/banner2.png" alt="" />
+					<img src="/picture/banner2.png" alt="" />
 				</div>
 				<div>
-					<img src="../../../src/assets/picture/banner3.png" alt="" />
+					<img src="/picture/banner3.png" alt="" />
 				</div>
 				<div>
-					<img src="../../../src/assets/picture/banner4.png" alt="" />
+					<img src="/picture/banner4.png" alt="" />
 				</div>
 				<div>
-					<img src="../../../src/assets/picture/banner5.png" alt="" />
+					<img src="/picture/banner5.png" alt="" />
 				</div>
 
 			</Slider>

@@ -43,21 +43,21 @@ const SlickOffers = () => {
 
 	const cardList = [
 		{
-			imgHref: 'src/assets/picture/product1.png',
+			imgHref: '/picture/product1.png',
 			title: '8 марта в Cyrene Sharm hotel',
 			dateRage: '(12.03.2018 — 19.03.2018)',
 			description: 'Перелёт, питание по системе all inclusive, трансфер',
 			price: '1 259 грн'
 		},
 		{
-			imgHref: 'src/assets/picture/product2.png',
+			imgHref: '/picture/product2.png',
 			title: '8 марта в Cyrene Sharm hotel',
 			dateRage: '(12.03.2018 — 19.03.2018)',
 			description: 'Перелёт, питание по системе all inclusive, трансфер',
 			price: '1 259 грн'
 		},
 		{
-			imgHref: 'src/assets/picture/product2.png',
+			imgHref: '/picture/product2.png',
 			title: '8 марта в Cyrene Sharm hotel',
 			dateRage: '(12.03.2018 — 19.03.2018)',
 			description: 'Перелёт, питание по системе all inclusive, трансфер',

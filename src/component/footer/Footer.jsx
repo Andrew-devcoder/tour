@@ -60,7 +60,7 @@ const Footer = () => {
 
 						<div className={column}>
 							<div className={row}>
-								<img src="../../src/assets/picture/footer-logo.png" alt="" />
+								<img src="/picture/footer-logo.png" alt="" />
 							</div>
 							<div className={row}>
 								<p>Кураж тур агенство,которое предоставляет услуги по поиску, оформлению и подбору туров для вас и ваших родных.</p>
@@ -68,7 +68,7 @@ const Footer = () => {
 							<div className={row}>
 
 								<p>Создание сайта  <span></span> </p>
-								<img src="../../src/assets/picture/dev-logo.png" alt="" />
+								<img src="/picture/dev-logo.png" alt="" />
 
 							</div>
 						</div>
