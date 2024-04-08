@@ -4,6 +4,7 @@ import style from "./NavMobile.module.scss"
 import { useEffect, useState } from 'react';
 import { MenuList } from '../menu-list/MenuList';
 
+
 const { wrapper } = style
 
 const NavMobile = () => {
@@ -16,15 +17,18 @@ const NavMobile = () => {
 		}
 	})
 
+
 	return (
 		<>
 			<div className={wrapper}>
 				<Hamburger toggled={isOpen} toggle={setOpen} />
-				{isOpen && <div>
 
-					<MenuList mobile={isMobile} />
+				{
+					isOpen && <div>
+						<MenuList mobile={isMobile} />
+					</div>
+				}
 
-				</div>}
 			</div>
 
 		</>

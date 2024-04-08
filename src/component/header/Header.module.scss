@@ -24,9 +24,10 @@
 
     width: 100%;
 
-    @media (max-width:425px) {
+    @media (max-width:426px) {
         flex-wrap: wrap;
         align-content: flex-start;
+        align-items: flex-start;
     }
 
 }

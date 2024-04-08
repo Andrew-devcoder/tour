@@ -57,10 +57,30 @@
     align-items: center;
     gap: 15px;
 
+    @media (max-width:425px) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+
+        & span {
+            display: none;
+        }
+    }
+
+    &:before {
+        content: '>';
+        transform: rotate(90deg);
+        color: #000;
+        position: absolute;
+        top: 0;
+        left: 100px;
+    }
+
     & li {
         display: flex;
         flex-direction: row;
     }
+
 }
 
 .dropListMenu {
@@ -78,6 +98,14 @@
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s ease;
+
+    @media (max-width:425px) {
+        position: static;
+        height: 0;
+        padding: 0;
+        gap: 0;
+        background-color: transparent;
+    }
 
     &>li {
         padding: 10px 0;
@@ -101,6 +129,13 @@
 .visible {
     visibility: visible;
     opacity: 1;
+    height: 100%;
+    gap: 15px;
+
+    & a {
+        color: #000 !important;
+        padding: 0 10px;
+    }
 }
 
 .arrow {
@@ -122,10 +157,22 @@
     top: 100px;
     left: 0;
 
+    z-index: 999;
+
+    @media (max-width:425px) {
+        left: -22px;
+        width: 100vw;
+    }
+
     & ul {
         display: flex;
         flex-direction: column;
         gap: 10px;
+    }
+
+    & a {
+        text-decoration: none;
+        color: #000;
     }
 
 }

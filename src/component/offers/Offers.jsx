@@ -25,7 +25,7 @@ const Offers = () => {
 				<h2 className={selectedTour === 'popular' ? selected : ''} onClick={() => handleSelect('popular')}>Популярние тури</h2>
 			</div>
 
-			<SlickOffers />
+			<SlickOffers selectedTour={selectedTour} />
 
 		</div>
 	)

@@ -107,31 +107,68 @@ const MenuList = ({ mobile }) => {
 		}));
 	};
 
+	const handleChange = (index) => {
+		setDropListStates((prevState) => {
+			const updatedStates = { ...prevState };
+			updatedStates[index] = !updatedStates[index]; // зміна стану для відповідного елементу
+			return updatedStates;
+		});
+	};
+
+
 	return (
-		<div className={isMobile ? menuMobile : menu}>
-			<ul>
-				{dataMenuList.map((item, index) =>
-				(item.dropMenu ? (
-					<li
-						key={index}
-						className={dropMenu}
-						onMouseEnter={() => handleMouseEnter(index)}
-						onMouseLeave={() => handleMouseLeave(index)}
-					>
-						<a href={item.link}>{item.label}</a><span className={arrow}></span>
-						<ul className={dropListStates[index] ? `${dropListMenu} ${visible}` : dropListMenu}>
-							{item.dropMenu.map((subItem, subIndex) => (
-								<li key={subIndex}>
-									<a href={subItem.link}>{subItem.label}</a>
+		<>
+			{
+				isMobile ? (<div className={menuMobile} >
+					< ul >
+						{
+							dataMenuList.map((item, index) =>
+							(item.dropMenu ? (
+								<li
+									key={index}
+									className={dropMenu}
+									onClick={() => handleChange(index)}
+								>
+									<a href={item.link}>{item.label}</a><span className={arrow}></span>
+									<ul className={dropListStates[index] ? `${dropListMenu} ${visible}` : dropListMenu}>
+										{item.dropMenu.map((subItem, subIndex) => (
+											<li key={subIndex}>
+												<a href={subItem.link}>{subItem.label}</a>
+											</li>
+										))}
+									</ul>
 								</li>
-							))}
-						</ul>
-					</li>
-				) : <li key={index}><a href={item.link}>{item.label}</a></li>)
-				)}
-			</ul>
-		</div>
+							) : <li key={index}><a href={item.link}>{item.label}</a></li>)
+							)
+						}
+					</ul >
+				</div >) : (<div className={menu}>
+					<ul>
+						{dataMenuList.map((item, index) =>
+						(item.dropMenu ? (
+							<li
+								key={index}
+								className={dropMenu}
+								onMouseEnter={() => handleMouseEnter(index)}
+								onMouseLeave={() => handleMouseLeave(index)}
+							>
+								<a href={item.link}>{item.label}</a><span className={arrow}></span>
+								<ul className={dropListStates[index] ? `${dropListMenu} ${visible}` : dropListMenu}>
+									{item.dropMenu.map((subItem, subIndex) => (
+										<li key={subIndex}>
+											<a href={subItem.link}>{subItem.label}</a>
+										</li>
+									))}
+								</ul>
+							</li>
+						) : <li key={index}><a href={item.link}>{item.label}</a></li>)
+						)}
+					</ul>
+				</div>)}
+
+		</>
 	)
+
 };
 
 export { MenuList }

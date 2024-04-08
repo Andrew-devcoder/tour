@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import { ProductCard } from "../product-card/ProductCard";
 
 import style from "./SlickOffers.module.scss"
+import { useEffect, useState } from "react";
 
 const { arrows, rightArrow, leftArrow } = style
 
@@ -29,7 +30,17 @@ const PrevArrow = (props) => {
 	);
 }
 
-const SlickOffers = () => {
+const SlickOffers = ({ selectedTour }) => {
+
+	const [cardList, setCardList] = useState([])
+
+	useEffect(() => {
+		if (selectedTour === 'hot') {
+			setCardList(cardListHot)
+		} else {
+			setCardList(cardListPopular)
+		}
+	}, [selectedTour])
 
 	const settings = {
 		dots: false,
@@ -56,7 +67,7 @@ const SlickOffers = () => {
 		]
 	}
 
-	const cardList = [
+	const cardListHot = [
 		{
 			imgHref: '/picture/product1.png',
 			title: '8 марта в Cyrene Sharm hotel',
@@ -74,6 +85,30 @@ const SlickOffers = () => {
 		{
 			imgHref: '/picture/product2.png',
 			title: '8 марта в Cyrene Sharm hotel',
+			dateRage: '(12.03.2018 — 19.03.2018)',
+			description: 'Перелёт, питание по системе all inclusive, трансфер',
+			price: '1 259 грн'
+		},
+	]
+
+	const cardListPopular = [
+		{
+			imgHref: '/picture/product1.png',
+			title: 'popular 8 марта в Cyrene Sharm hotel',
+			dateRage: '(12.03.2018 — 19.03.2018)',
+			description: 'Перелёт, питание по системе all inclusive, трансфер',
+			price: '1 259 грн'
+		},
+		{
+			imgHref: '/picture/product2.png',
+			title: 'popular 8 марта в Cyrene Sharm hotel',
+			dateRage: '(12.03.2018 — 19.03.2018)',
+			description: 'Перелёт, питание по системе all inclusive, трансфер',
+			price: '1 259 грн'
+		},
+		{
+			imgHref: '/picture/product2.png',
+			title: 'popular 8 марта в Cyrene Sharm hotel',
 			dateRage: '(12.03.2018 — 19.03.2018)',
 			description: 'Перелёт, питание по системе all inclusive, трансфер',
 			price: '1 259 грн'
