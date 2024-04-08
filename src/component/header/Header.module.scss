@@ -9,6 +9,10 @@
     z-index: 99;
 
     width: 65%;
+
+    @media (max-width: 1024px) {
+        width: 90%;
+    }
 }
 
 .wrapperMain {
@@ -17,7 +21,14 @@
     align-items: center;
     justify-content: space-between;
 
+
     width: 100%;
+
+    @media (max-width:425px) {
+        flex-wrap: wrap;
+        align-content: flex-start;
+    }
+
 }
 
 .wrapperLogo {
@@ -26,4 +37,13 @@
     max-height: 100px;
 
     filter: drop-shadow(2px 0 4px #00000090);
+
+    @media (max-width:768px) {
+        max-width: 60px;
+    }
+
+    @media (max-width:425px) {
+        max-width: 50px;
+    }
+
 }

@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import style from "./MenuList.module.scss"
 
 const dataMenuList = [
@@ -81,10 +81,18 @@ const dataMenuList = [
 	},
 ]
 
-const { menu, dropMenu, dropListMenu, visible, arrow } = style
+const { menu, dropMenu, dropListMenu, visible, arrow, menuMobile } = style
 
-const MenuList = () => {
+const MenuList = ({ mobile }) => {
 	const [dropListStates, setDropListStates] = useState({});
+	const [isMobile, setMobile] = useState(false)
+
+	useEffect(() => {
+		if (mobile) {
+			setMobile(true)
+		}
+	}, [mobile])
+
 	const handleMouseEnter = (index) => {
 		setDropListStates((prevStates) => ({
 			...prevStates,
@@ -100,7 +108,7 @@ const MenuList = () => {
 	};
 
 	return (
-		<div className={menu}>
+		<div className={isMobile ? menuMobile : menu}>
 			<ul>
 				{dataMenuList.map((item, index) =>
 				(item.dropMenu ? (

@@ -13,6 +13,21 @@
     gap: 20px;
 
     cursor: pointer;
+
+
+    @media (max-width: 1024px) {
+        width: 90%;
+    }
+
+    @media (max-width:425px) {
+        font-size: 14px;
+        justify-content: space-between;
+    }
+
+    @media (max-width:425px) {
+        flex-direction: column;
+    }
+
 }
 
 .selected {

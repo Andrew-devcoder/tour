@@ -45,7 +45,7 @@ const Footer = () => {
 								</option>
 							))}
 						</select>
-
+						<div></div>
 						<button type="submit">Получить предложение</button>
 
 					</form>

@@ -38,7 +38,22 @@ const SlickOffers = () => {
 		slidesToScroll: 1,
 		speed: 1500,
 		nextArrow: <NextArrow />,
-		prevArrow: <PrevArrow />
+		prevArrow: <PrevArrow />,
+		responsive: [
+			{
+				breakpoint: 1025,
+				settings: {
+					slidesToShow: 2,
+				}
+			},
+			{
+				breakpoint: 768,
+				settings: {
+					slidesToShow: 1,
+				}
+			}
+
+		]
 	}
 
 	const cardList = [

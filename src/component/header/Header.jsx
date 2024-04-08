@@ -1,10 +1,21 @@
 import { MenuList } from "./menu-list/MenuList";
-import style from "./Header.module.scss"
 import { ContactsHeader } from "./contacts-header/ContactsHeader";
+
+import style from "./Header.module.scss"
+import { useState } from "react";
+import { NavMobile } from "./nav-mobile/NavMobile";
+
+import { useMediaQuery } from 'react-responsive'
 
 const { container, wrapperMain, wrapperLogo } = style
 
 const Header = () => {
+
+
+	const isMobileScreen = useMediaQuery({ query: '(max-width: 1024px)' })
+
+
+
 	return (
 		<header className={container}>
 			<div className={wrapperMain}>
@@ -15,10 +26,16 @@ const Header = () => {
 
 				<div>
 					<ContactsHeader />
-					<MenuList />
+					{
+						isMobileScreen ?
+							<NavMobile /> :
+							<MenuList />
+
+					}
+
 				</div>
 
-			</div >
+			</div>
 		</header >
 	)
 };

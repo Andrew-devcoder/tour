@@ -8,12 +8,13 @@
 
     position: relative;
 
-    & > ul {
+    &>ul {
         display: flex;
         flex-direction: row;
         gap: 40px;
 
-        & > li {
+
+        &>li {
             font-weight: 800;
             font-size: 18px;
 
@@ -78,7 +79,7 @@
     visibility: hidden;
     transition: all 0.4s ease;
 
-    & > li {
+    &>li {
         padding: 10px 0;
 
         font-weight: 300;
@@ -109,4 +110,22 @@
     border-top: 2px solid #000;
     border-right: 2px solid #000;
     transform: rotate(135deg) translateY(50%);
+}
+
+
+.menuMobile {
+    background-color: #ffffff;
+    width: 100%;
+    padding: 15px;
+
+    position: fixed;
+    top: 100px;
+    left: 0;
+
+    & ul {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
 }

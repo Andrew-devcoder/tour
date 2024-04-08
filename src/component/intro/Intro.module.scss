@@ -12,6 +12,10 @@
         object-fit: cover;
 
         width: auto;
+
+        @media (max-width:425px) {
+            min-height: 80vh;
+        }
     }
 }
 
@@ -28,13 +32,31 @@
     background-color: #03588c90;
     padding: 50px 60px 60px 17%;
 
+    @media (max-width: 1024px) {
+        padding: 50px 60px 60px 7%;
+    }
+
+    @media (max-width:768px) {
+        font-size: 12px;
+        padding: 40px 50px 50px 5%;
+    }
+
+    @media (max-width:425px) {
+        max-width: 100%;
+    }
+
     & button {
         padding: 10px 15px;
         border-radius: 8px;
+
     }
 }
 
 .title {
     color: #fff;
     padding-bottom: 50px;
+
+    @media (max-width:425px) {
+        padding-bottom: 30px;
+    }
 }
