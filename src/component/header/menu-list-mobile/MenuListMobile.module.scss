@@ -30,7 +30,6 @@
 
 .dropListMenu {
 	opacity: 0;
-	display: none;
 	height: 0;
 	transition: all 0.4s ease;
 
@@ -39,6 +38,5 @@
 
 .visible {
 	opacity: 1;
-	display: block;
 	height: 100%;
 }
