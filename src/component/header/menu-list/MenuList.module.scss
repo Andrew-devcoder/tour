@@ -62,23 +62,30 @@
         align-items: flex-start;
         gap: 0;
 
+        &:before {
+            content: '>';
+            transform: rotate(90deg);
+            color: #000;
+            position: absolute;
+            top: 0;
+            left: 100px;
+        }
+
         & span {
             display: none;
         }
+
     }
 
-    &:before {
-        content: '>';
-        transform: rotate(90deg);
-        color: #000;
-        position: absolute;
-        top: 0;
-        left: 100px;
-    }
 
     & li {
         display: flex;
         flex-direction: row;
+    }
+
+    &:hover .dropListMenu {
+        opacity: 1;
+        visibility: visible;
     }
 
 }
