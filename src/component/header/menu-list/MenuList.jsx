@@ -2,84 +2,7 @@
 import { useEffect, useState } from "react";
 import style from "./MenuList.module.scss"
 
-const dataMenuList = [
-	{
-		label: 'Главная',
-		link: '#'
-	},
-	{
-		label: 'Тури',
-		link: '#',
-		dropMenu: [
-			{
-				label: 'Горящие туры',
-				link: '#',
-			},
-			{
-				label: 'Поиск тура',
-				link: '#',
-			},
-			{
-				label: 'Горящие туры',
-				link: '#',
-			},
-			{
-				label: 'Туры по Украине',
-				link: '#',
-			},
-			{
-				label: 'Экскурсионные туры',
-				link: '#',
-			},
-			{
-				label: 'Week end туры',
-				link: '#',
-			},
-		]
-	},
-	{
-		label: 'Страни',
-		link: '#'
-	},
-	{
-		label: 'Услуги',
-		link: '#',
-		dropMenu: [
-			{
-				label: 'Авиабилеты',
-				link: '#',
-			},
-			{
-				label: 'Визовая поддержка',
-				link: '#',
-			},
-			{
-				label: 'Индивидуальный трансфер',
-				link: '#',
-			},
-			{
-				label: 'Подарочные сертификаты',
-				link: '#',
-			},
-			{
-				label: 'Бронирование отелей и апартаментов',
-				link: '#',
-			},
-			{
-				label: 'Как забронировать и оплатить тур',
-				link: '#',
-			},
-		]
-	},
-	{
-		label: 'О компании',
-		link: '#'
-	},
-	{
-		label: 'Контаки',
-		link: '#'
-	},
-]
+import { dataMenuList } from "../../../content/dataMenuList";
 
 const { menu, dropMenu, dropListMenu, visible, arrow, menuMobile } = style
 
@@ -92,6 +15,12 @@ const MenuList = ({ mobile }) => {
 			setMobile(true)
 		}
 	}, [mobile])
+
+	useEffect(() => {
+		if (mobile) {
+			setMobile(true)
+		}
+	}, [])
 
 	const handleMouseEnter = (index) => {
 		setDropListStates((prevStates) => ({
@@ -107,14 +36,6 @@ const MenuList = ({ mobile }) => {
 		}));
 	};
 
-	const handleChange = (index) => {
-		setDropListStates((prevState) => {
-			const updatedStates = { ...prevState };
-			updatedStates[index] = !updatedStates[index]; // зміна стану для відповідного елементу
-			return updatedStates;
-		});
-	};
-
 
 	return (
 		<>
@@ -127,10 +48,10 @@ const MenuList = ({ mobile }) => {
 								<li
 									key={index}
 									className={dropMenu}
-									onClick={() => handleChange(index)}
+									onClick={(e) => handleChange(e, index)}
 								>
 									<a href={item.link}>{item.label}</a><span className={arrow}></span>
-									<ul className={dropListStates[index] ? `${dropListMenu} ${visible}` : dropListMenu}>
+									<ul className={dropListStatesMobile[index] ? `${dropListMenu} ${visible}` : dropListMenu}>
 										{item.dropMenu.map((subItem, subIndex) => (
 											<li key={subIndex}>
 												<a href={subItem.link}>{subItem.label}</a>

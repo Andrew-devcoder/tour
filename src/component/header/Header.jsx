@@ -6,35 +6,33 @@ import { useState } from "react";
 import { NavMobile } from "./nav-mobile/NavMobile";
 
 import { useMediaQuery } from 'react-responsive'
+import { NavDesktop } from "./nav-desktop/NavDesktop";
 
 const { container, wrapperMain, wrapperLogo } = style
 
 const Header = () => {
-
-
 	const isMobileScreen = useMediaQuery({ query: '(max-width: 1024px)' })
 
-
-
 	return (
-		<header className={container}>
-			<div className={wrapperMain}>
+		<header>
+			<div className={container}>
+				<div className={wrapperMain}>
 
-				<div className={wrapperLogo}>
-					<img src="/picture/logo.png" alt="" />
+					<div className={wrapperLogo}>
+						<img src="/picture/logo.png" alt="" />
+					</div>
+
+					<div>
+						<ContactsHeader />
+						{
+							isMobileScreen ?
+								<NavMobile /> :
+								<NavDesktop />
+						}
+
+					</div>
+
 				</div>
-
-				<div>
-					<ContactsHeader />
-					{
-						isMobileScreen ?
-							<NavMobile /> :
-							<MenuList />
-
-					}
-
-				</div>
-
 			</div>
 		</header >
 	)

@@ -1,0 +1,64 @@
+.menu {
+	padding: 15px 30px;
+	border-radius: 8px;
+
+	background-color: #f2e205;
+	filter: drop-shadow(2px 0 4px #00000090);
+	cursor: pointer;
+
+	position: relative;
+
+	&>ul {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		gap: 40px;
+
+		& a {
+			text-decoration: none;
+			color: #00000097;
+			transition: all 0.4s ease;
+			position: relative;
+		}
+	}
+}
+
+.dropMenu {
+	position: relative;
+
+	&::after {
+		content: '>';
+		padding: 5px;
+		display: inline-block;
+		transform: rotate(90deg);
+	}
+
+	&>ul {
+		position: absolute;
+		top: 43px;
+		left: 0;
+
+		padding: 10px 30px;
+		background-color: #3299d990;
+
+		opacity: 0;
+
+		transition: all 0.4s ease;
+
+		& li {
+			text-wrap: nowrap;
+			padding: 5px 0;
+
+			& a {
+				color: #ffffff90;
+			}
+		}
+	}
+
+	&:hover {
+		&>ul {
+			opacity: 1;
+		}
+	}
+}

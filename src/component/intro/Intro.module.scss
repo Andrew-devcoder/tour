@@ -39,11 +39,10 @@
     @media (max-width:768px) {
         font-size: 12px;
         padding: 40px 50px 50px 5%;
-    }
-
-    @media (max-width:425px) {
         max-width: 100%;
     }
+
+    // @media (max-width:425px) {}
 
     & button {
         padding: 10px 15px;
